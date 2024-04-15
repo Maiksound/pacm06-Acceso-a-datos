@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+	<hibernate-mapping>
+	  <class name = "pacm06.Prestamo" table = "prestamos" >
+	    <id name = "idPrestamo">
+	       <column name = "IDPrestamo"/>
+	       <generator class = "increment"/>
+	    </id>
+	    <property name = "fecPrestamo"></property>
+	    <property name = "fecDevolucion"></property>
+	
+	  </class>
+	  	</hibernate-mapping>
