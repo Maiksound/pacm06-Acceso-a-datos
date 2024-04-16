@@ -30,12 +30,12 @@ public class PrestamoService {
         prestamoDAO.asignarLibroALector(idLibro, idLector);
     }
     public static void devolverLibro(int idLibro, int idLector) {
-        // Verificar si el libro est· prestado al lector
+        // Verificar si el libro est√° prestado al lector
         List<Prestamo> prestamo = PrestamoDAO.obtenerPrestamosPorLector(idLibro, idLector);
         
         if (prestamo != null) {
-            // Registrar la devoluciÛn del libro
-            ((Prestamo) prestamo).setFecDevolucion(new Date()); // Suponiendo que est·s utilizando java.util.Date
+            // Registrar la devoluci√≥n del libro
+            ((Prestamo) prestamo).setFecDevolucion(new Date()); 
             PrestamoDAO.crearPrestamo((Prestamo) prestamo);
             
             // Marcar el libro como disponible
@@ -45,7 +45,7 @@ public class PrestamoService {
             
             System.out.println("Libro devuelto exitosamente.");
         } else {
-            System.out.println("El libro no est· prestado a este lector.");
+            System.out.println("El libro no est√° prestado a este lector.");
         }
     }
     private void actualizarEstadoLibro(int idLibro, boolean disponible) {
@@ -70,7 +70,7 @@ public class PrestamoService {
             Libro libro = session.get(Libro.class, idLibro);
             Lector lector = session.get(Lector.class, idLector);
             
-            // Verificar si el libro est· disponible
+            // Verificar si el libro est√° disponible
             if (libro.isDisponible()) {
                 // Crear un nuevo objeto Prestamo
                 Prestamo prestamo = new Prestamo();
@@ -87,7 +87,7 @@ public class PrestamoService {
                 tx.commit();
                 System.out.println("Libro asignado al lector exitosamente.");
             } else {
-                System.out.println("El libro no est· disponible para prÈstamo.");
+                System.out.println("El libro no est√° disponible para pr√©stamo.");
             }
         }
     }
