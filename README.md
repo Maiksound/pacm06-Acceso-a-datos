@@ -32,6 +32,7 @@ Préstamo: Esta entidad gestionará los préstamos de libros a los lectores. Deb
 incluir id, fecha de préstamo, fecha de devolución y las referencias a las entidades
 Libro y Lector.
 PrestamoDAO: Proporciona los metodos que representan la informacion sobre los prestamos de los libros
+PrestamoService: actúa como una capa intermedia entre la capa de presentación (en este caso, representada por la clase Main) y la capa de acceso a datos (representada por los DAOs). Su objetivo es encapsular la lógica relacionada con los préstamos de libros. Con ella proporciono métodos para manipular los préstamos de libros, encapsulando la lógica relacionada con las operaciones de préstamo y devolución, mientras delega las operaciones de acceso a datos a los DAOs correspondientes.
 1.4. Implementar Operaciones CRUD (Crear, Leer, Actualizar, Borrar):
 Para libros y lectores.
 Gestión de préstamos, incluyendo asignar un libro a un lector y registrar la
